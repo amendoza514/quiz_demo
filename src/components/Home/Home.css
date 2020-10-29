@@ -1,0 +1,25 @@
+.home {
+    background-color: #2b3132;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    font-family: 'Permanent Marker', cursive;
+}
+
+
+.home-container {
+    background-color: #4c6266;
+    display: flex;
+    justify-content: space-between;
+    width: 89%;
+    height: 70vh;
+    margin-top: 8vh;
+    color: white;
+}
+
+.container {
+
+}
+
