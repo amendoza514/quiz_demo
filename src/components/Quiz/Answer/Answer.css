@@ -1,0 +1,17 @@
+.answer-list {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+}
+
+.answer {
+    background-color: slategrey;
+    margin: 10px;
+    width: 82%;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}

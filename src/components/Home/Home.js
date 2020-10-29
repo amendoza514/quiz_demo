@@ -8,12 +8,12 @@ function Home() {
     return (
       <>
           <div className="home">
-            <div className="home-container container" >
+            {/* <div className="home-container container" >
                 <div className='welcome'>
                     Welcome! Choose a quiz to get started
-                </div>
+                </div> */}
                 <Quiz />
-            </div>
+            {/* </div> */}
           </div>
       </>
     );

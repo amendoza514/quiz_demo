@@ -1,23 +1,23 @@
-.quiz {
-    background-color: #2b3132;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    /* align-items: center; */
-    font-family: 'Permanent Marker', cursive;
-}
-
-
 .quiz-container {
     background-color: #4c6266;
-    display: flex;
-    justify-content: space-between;
-    width: 89%;
-    height: 70vh;
+    font-family: 'Overpass', sans-serif;
+    justify-content: center;
+    width: 80%;
+    height: 75vh;
+    margin-top: 50px;
     color: white;
 }
 
-.container {
-
+.question-prompt {
+    display: flex;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    height: 20%;
+    font-size: 25px;
+    background-color: slategrey;
+    justify-content: center;
+    align-items: center;
+    white-space: pre-wrap;
+    padding: 50px;
 }
