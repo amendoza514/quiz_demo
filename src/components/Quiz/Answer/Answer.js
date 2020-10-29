@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import './Answer.css';
 
-function Answer() {
-
+function Answer({ content, correct, reveal, show}) {
+    console.log(content)
     return (
       <>
-            <div className='answer'>
-                Answer
+            <div 
+                className= {correct === content && show ? 'answer-correct' : 'answer'} 
+                onClick={reveal}
+                >
+                {content}
             </div>
       </>
     );

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Answer from './Answer/Answer';
+import Question from './Question/Question'
 import './Quiz.css';
 import { API_KEY } from '../../secrets';
 
 function Quiz() {
-    const [questions, setQuestions] = useState([]);
+    const [questions, setQuestions] = useState(null);
 
     const fetchQuestions = () => {
                 let req = new XMLHttpRequest();
@@ -21,37 +22,17 @@ function Quiz() {
             setQuestions(jsonResponse);
         };
         req.send();
-        console.log(questions);
+        // console.log(questions);
     }
-
-    let answers = []
-
-    if (questions[0]) {
-        for (let i = 0; i < 3; i++) {
-            answers.push(questions[0].incorrect)
-        }
-        answers.push(questions[0].correct)
-    }
-
 
     useEffect(fetchQuestions, []);
 
     return (
-      <>
-            <div className="quiz-container container" >
-                <div className='question-prompt'>
-                    {questions[0] ? questions[1].question : 'Loading'}
-                </div>
-                <div className='answer-list'>
-                    {/* {questions[0] ? questions[0].incorrect[1] : ''} */}
-                    {answers.map((comment, idx) => {
-                        return (
-                            <Answer />
-                        )
-                    })}
-                </div>
-            </div>
-      </>
+        <>
+            { questions &&
+                    <Question data={questions[0]}/>
+            }
+        </>
     );
 }
 
