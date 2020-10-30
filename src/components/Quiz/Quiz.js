@@ -6,10 +6,12 @@ import './Quiz.css';
 import { API_KEY } from '../../secrets';
 
 function Quiz() {
-    const [questions, setQuestions] = useState(null);
+    const [questions, setQuestions] = useState(0);
+    const [score, setScore] = useState(0);
+    const [sequence, setSequence] = useState(0);
 
     const fetchQuestions = () => {
-                let req = new XMLHttpRequest();
+        let req = new XMLHttpRequest();
         req.onreadystatechange = () => {
         if (req.readyState == XMLHttpRequest.DONE) {
         }
@@ -18,7 +20,6 @@ function Quiz() {
         req.setRequestHeader("secret-key", API_KEY);
         req.onload  = function() {
             var jsonResponse = JSON.parse(req.responseText);
-            // do something with jsonResponse
             setQuestions(jsonResponse);
         };
         req.send();
@@ -26,12 +27,12 @@ function Quiz() {
     }
 
     useEffect(fetchQuestions, []);
+    let question = <Question next={() => setSequence(sequence + 1)} data={questions[sequence]}/>
+    let loading = <div className='loading'>Loading...</div>
 
     return (
         <>
-            { questions &&
-                    <Question data={questions[0]}/>
-            }
+            { questions ? question : loading}
         </>
     );
 }

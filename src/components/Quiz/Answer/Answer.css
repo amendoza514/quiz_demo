@@ -16,6 +16,17 @@
     font-size: 25px;
 }
 
+.answer:hover {
+    background-color: rgb(127, 136, 145);
+    margin: 10px;
+    width: 82%;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+
 .answer-correct {
     background-color: green;
     margin: 10px;

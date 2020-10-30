@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Answer from '../Answer/Answer';
 import './Question.css'
 
-function Question({ data: question }) {
+function Question({ next, data: question }) {
     const [answers, setAnswers] = useState([]);
     const [revealState, setRevealState] = useState(false);
 
@@ -42,6 +42,9 @@ function Question({ data: question }) {
                     })}
                 </div>
             </div>
+                <div className="next-button" onClick={next}>
+                    <i class="fas fa-long-arrow-alt-right"></i>
+                </div>
       </>
     );
 }
