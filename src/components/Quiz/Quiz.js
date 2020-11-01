@@ -9,6 +9,8 @@ function Quiz() {
     const [questions, setQuestions] = useState(0);
     const [score, setScore] = useState(0);
     const [sequence, setSequence] = useState(0);
+    const [questionComponents, setQuestionCompenents] = useState([]);
+    const [currentQuestion, setCurrentQuestion] = useState(null)
 
     const fetchQuestions = () => {
         let req = new XMLHttpRequest();
@@ -20,19 +22,49 @@ function Quiz() {
         req.setRequestHeader("secret-key", API_KEY);
         req.onload  = function() {
             var jsonResponse = JSON.parse(req.responseText);
-            setQuestions(jsonResponse);
+            handleQuestionResponse(jsonResponse);
         };
         req.send();
         // console.log(questions);
     }
 
     useEffect(fetchQuestions, []);
-    let question = <Question next={() => setSequence(sequence + 1)} data={questions[sequence]}/>
+
+    const handleQuestionResponse = (response) => {
+        setQuestions(response);
+        let answers = getAnswers(response[0]);
+        let curQuest = <Question score={() => setScore(score + 1)} next={(index) => nextQuestion(index, response)} data={response[0]} index={0} answers={answers}/>
+        setCurrentQuestion(curQuest);
+    }
+
+    const nextQuestion = (index, qs) => {
+        let newIndex = parseInt(index) + 1;
+        let newQuestion = qs[newIndex];
+        let answers = getAnswers(newQuestion);
+        let newComponent = <Question score={() => setScore(score + 1)} next={(i) => nextQuestion(i, qs)} data={newQuestion} index={newIndex} answers={answers}/>
+        setCurrentQuestion(newComponent);
+    }
+
+    const getAnswers = (question) => {
+        let store = []
+        for (let i = 0; i < 3; i++) {
+            store.push(question.incorrect[i])
+        }
+        store.push(question.correct)
+
+        let shuffled = store.map(a => ({ sort: Math
+                        .random(), value: a }))
+                        .sort((a, b) => a.sort - b.sort)
+                        .map(a => a.value);
+        return shuffled
+    }
+
     let loading = <div className='loading'>Loading...</div>
 
     return (
         <>
-            { questions ? question : loading}
+            <div className='score' onClick={() => setScore(score + 1)}>score: {score}</div>
+            { currentQuestion ? currentQuestion : loading }
         </>
     );
 }

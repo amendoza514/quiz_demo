@@ -5,3 +5,19 @@
     color: white;
     font-size: 30px;
 }
+
+.score {
+    background-color: #4c6266;
+    font-family: 'Overpass', sans-serif;
+    font-size: 22px;
+    width: 14rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    /* margin-top: -8px; */
+    color: white;
+    margin-top: 17px;
+    border-radius: 5px;
+}

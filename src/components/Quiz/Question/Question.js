@@ -2,17 +2,22 @@ import React, { useState, useEffect } from 'react';
 import Answer from '../Answer/Answer';
 import './Question.css'
 
-function Question({ next, data: question }) {
-    const [answers, setAnswers] = useState([]);
+function Question({ next, data, score, index, answers }) {
+    //const [answers, setAnswers] = useState([]);
     const [revealState, setRevealState] = useState(false);
 
     useEffect(() => {
+        //refreshAnswers();
+    }, []);
+
+    /*
+    const refreshAnswers = () => {
         let store = []
-        if (question) {
-        for (let i = 0; i < 3; i++) {
-            store.push(question.incorrect[i])
-        }
-        store.push(question.correct)
+        if (data) {
+            for (let i = 0; i < 3; i++) {
+                store.push(data.incorrect[i])
+            }
+            store.push(data.correct)
         }
 
         let shuffled = store.map(a => ({ sort: Math
@@ -20,13 +25,19 @@ function Question({ next, data: question }) {
                         .sort((a, b) => a.sort - b.sort)
                         .map(a => a.value)
         setAnswers(shuffled);
-    }, []);
+    }
+    */
+
+    const goToNext = () => {
+        next(index);
+        //refreshAnswers();
+    }
 
     return (
       <>
             <div className="quiz-container container" >
                 <div className='question-prompt'>
-                    {question ? question.question : 'Loading'}
+                    {data ? data.question : 'Loading'}
                 </div>
                 <div className='answer-list'>
                     {answers.map((answer, idx) => {
@@ -34,7 +45,8 @@ function Question({ next, data: question }) {
                             <Answer 
                                 key={idx} 
                                 content={answer} 
-                                correct={question.correct}
+                                correct={data.correct}
+                                score={score}
                                 show = {revealState}
                                 reveal={() => setRevealState(!revealState)}
                             />
@@ -42,7 +54,7 @@ function Question({ next, data: question }) {
                     })}
                 </div>
             </div>
-                <div className="next-button" onClick={next}>
+                <div className="next-button" onClick={goToNext}>
                     <i class="fas fa-long-arrow-alt-right"></i>
                 </div>
       </>
