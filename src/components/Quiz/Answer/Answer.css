@@ -9,7 +9,7 @@
     background-color: slategrey;
     margin: 10px;
     width: 82%;
-    height: 5rem;
+    height: 4rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,7 +21,7 @@
     background-color: rgb(127, 136, 145);
     margin: 10px;
     width: 82%;
-    height: 5rem;
+    height: 4rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -33,7 +33,7 @@
     background-color: green;
     margin: 10px;
     width: 82%;
-    height: 5rem;
+    height: 4rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -45,7 +45,7 @@
     background-color: red;
     margin: 10px;
     width: 82%;
-    height: 5rem;
+    height: 4rem;    
     display: flex;
     align-items: center;
     justify-content: center;
