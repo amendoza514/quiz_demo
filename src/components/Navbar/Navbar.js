@@ -29,8 +29,9 @@ function Navbar() {
                     </a>
                 </li>
                 <li className="nav-button">
-                   <Link to="/signup" className="button-link">
-                      <Button buttonStyle="button--outline">Contact Me</Button>
+                   <Link className="button-link">
+                     {/* <Link to="/signup" className="button-link"> */}
+                      <Button buttonStyle="button--outline" onClick={() =>  window.location.href = `mailto:${'alexjmendoza514@gmail.com'}`}>Contact Me</Button>
                     </Link>
                 </li>
               </ul>
