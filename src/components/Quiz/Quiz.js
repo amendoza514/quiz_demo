@@ -37,9 +37,14 @@ function Quiz() {
         setCurrentQuestion(curQuest);
     }
     
-    const handleScore = () => {
-        setScore(score + 1)
-    }
+    // const handleScore = () => {
+    //     console.log(score)
+    //     setScore(score + 1)
+    // }
+
+    async function handleScore () {
+    await setScore(score => score + 1);
+  }
 
     const nextQuestion = (index, qs) => {
         let newIndex = parseInt(index) + 1;
