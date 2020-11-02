@@ -66,6 +66,7 @@
     white-space: pre-wrap;
     padding: 50px;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .score-result {

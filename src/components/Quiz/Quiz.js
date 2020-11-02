@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Answer from './Answer/Answer';
 import Question from './Question/Question'
 import './Quiz.css';
-// import { API_KEY } from '../../secrets';
+import { API_KEY } from '../../secrets';
 
 function Quiz() {
     const [questions, setQuestions] = useState(0);
@@ -14,7 +14,7 @@ function Quiz() {
     const [currentQuestion, setCurrentQuestion] = useState(null);
 
     let possibleScore;
-    const API_KEY = "$2b$10$SSwOGKNSXdW.5HVS0wYxQOZxLlKQW0e1MjrNSpqyHCg12QdmCSrWq";
+
     const fetchQuestions = () => {
         setFinishState(false)
         let req = new XMLHttpRequest();

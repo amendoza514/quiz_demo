@@ -3,7 +3,7 @@
     font-family: 'Overpass', sans-serif;
     justify-content: center;
     width: 65%;
-    height: 60%;
+    height: 65%;
     margin-top: 97px;
     color: white;
     border-radius: 5px;
@@ -34,7 +34,7 @@
     align-items: center;
     position: absolute;
     bottom: 0;
-    margin-bottom: 135px;
+    margin-bottom: 62px;
     z-index: 1000;
     color: white;
     font-size: 40px;
@@ -51,7 +51,7 @@
     align-items: center;
     position: absolute;
     bottom: 0;
-    margin-bottom: 135px;
+    margin-bottom: 62px;
     z-index: 1000;
     color: white;
     font-size: 40px;
@@ -68,7 +68,7 @@
     align-items: center;
     position: absolute;
     bottom: 0;
-    margin-bottom: 135px;
+    margin-bottom: 62px;
     z-index: 1000;
     color: white;
     font-size: 40px;
