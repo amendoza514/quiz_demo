@@ -50,7 +50,7 @@ function Quiz() {
 
     const getAnswers = (question) => {
         let store = []
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < question.incorrect.length; i++) {
             store.push(question.incorrect[i])
         }
         store.push(question.correct)
