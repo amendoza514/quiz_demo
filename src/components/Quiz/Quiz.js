@@ -8,9 +8,12 @@ import { API_KEY } from '../../secrets';
 function Quiz() {
     const [questions, setQuestions] = useState(0);
     const [score, setScore] = useState(0);
+    const [finished, setFinishState] = useState(false)
     const [sequence, setSequence] = useState(0);
     const [questionComponents, setQuestionCompenents] = useState([]);
-    const [currentQuestion, setCurrentQuestion] = useState(null)
+    const [currentQuestion, setCurrentQuestion] = useState(null);
+
+    let possibleScore;
 
     const fetchQuestions = () => {
         let req = new XMLHttpRequest();
@@ -22,6 +25,7 @@ function Quiz() {
         req.setRequestHeader("secret-key", API_KEY);
         req.onload  = function() {
             var jsonResponse = JSON.parse(req.responseText);
+            possibleScore = jsonResponse.length;
             handleQuestionResponse(jsonResponse);
         };
         req.send();
@@ -37,15 +41,36 @@ function Quiz() {
     }
 
     async function handleScore () {
-    await setScore(score => score + 1);
-  }
+        await setScore(score => score + 1);
+    }
+
+    async function resetScore () {
+        await setScore(score => score = 0);
+    }
 
     const nextQuestion = (index, qs) => {
         let newIndex = parseInt(index) + 1;
         let newQuestion = qs[newIndex];
-        let answers = getAnswers(newQuestion);
-        let newComponent = <Question score={() => handleScore()} next={(i) => nextQuestion(i, qs)} data={newQuestion} index={newIndex} answers={answers} />
-        setCurrentQuestion(newComponent);
+        if (!newQuestion) {
+            setFinishState(true)
+            let newComponent = 
+            <div className="end-container container" >
+                <div className='end-prompt' onClick={() => { resetScore(); fetchQuestions();}} >
+                    Home
+                </div>
+                {/* <div className='score-result'>
+                    {currentScore} out of {possibleScore}
+                </div>
+                <div className='percent'>
+                    {currentScore / possibleScore}
+                </div> */}
+            </div>
+             setCurrentQuestion(newComponent);
+        } else {
+            let answers = getAnswers(newQuestion);
+            let newComponent = <Question score={() => handleScore()} next={(i) => nextQuestion(i, qs)} data={newQuestion} index={newIndex} answers={answers} />
+            setCurrentQuestion(newComponent);
+        }
     }
 
     const getAnswers = (question) => {
@@ -63,10 +88,17 @@ function Quiz() {
     }
 
     let loading = <div className='loading'>Loading...</div>
+    let scoreBox;
+
+    if (!finished) {
+        scoreBox = <div className='score' onClick={() => handleScore()}>score: {score}</div>
+    } else {
+        scoreBox = <div className='score' onClick={() => handleScore()}>Your final score is: {score}!</div>
+    }
 
     return (
         <>
-            <div className='score' onClick={() => handleScore()}>score: {score}</div>
+            {scoreBox}
             { currentQuestion ? currentQuestion : loading }
         </>
     );
