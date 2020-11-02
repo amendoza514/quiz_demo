@@ -1,6 +1,5 @@
 .footer {
-    /* background: #2b3132; */
-    height: 50px;
+    background: #2b3132;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,24 +10,12 @@
     font-family: 'Permanent Marker', cursive;
 }
 
-
 .footer-container {
   display: flex;
   justify-content: center;
   height: 80px;
   
 }
-
-/* .container {
-  z-index: 1;
-  width: 100%;
-  max-width: 1300px;
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 50px;
-  padding-left: 50px;
-  
-} */
 
 .footer-logo {
   color: white;
@@ -40,15 +27,3 @@
   align-items: center;
   
 }
-
-/* .nav-menu {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  list-style: none;
-  text-align: center;
-  justify-content: end;
-    font-family: 'Overpass', sans-serif;
-
-} */
-

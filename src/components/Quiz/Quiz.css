@@ -22,8 +22,24 @@
     border-radius: 5px;
 }
 
-.end-container {
+.score-final {
     background-color: #4c6266;
+    font-family: 'Overpass', sans-serif;
+    font-size: 22px;
+    width: 14rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    /* margin-top: -8px; */
+    color: white;
+    margin-top: 17px;
+    border-radius: 5px;
+}
+
+
+.end-container {
     font-family: 'Overpass', sans-serif;
     justify-content: center;
     width: 65%;
@@ -39,7 +55,7 @@
     display: flex;
     margin-top: 21.5px;
     margin-bottom: .7rem;
-    width: 100%;
+    width: 60%;
     height: 15%;
     font-size: 25px;
     background-color: slategrey;

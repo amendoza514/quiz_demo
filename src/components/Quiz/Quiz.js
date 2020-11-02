@@ -16,6 +16,7 @@ function Quiz() {
     let possibleScore;
 
     const fetchQuestions = () => {
+        setFinishState(false)
         let req = new XMLHttpRequest();
         req.onreadystatechange = () => {
         if (req.readyState == XMLHttpRequest.DONE) {
@@ -56,7 +57,7 @@ function Quiz() {
             let newComponent = 
             <div className="end-container container" >
                 <div className='end-prompt' onClick={() => { resetScore(); fetchQuestions();}} >
-                    Home
+                    Go Again!
                 </div>
                 {/* <div className='score-result'>
                     {currentScore} out of {possibleScore}
@@ -93,7 +94,7 @@ function Quiz() {
     if (!finished) {
         scoreBox = <div className='score' onClick={() => handleScore()}>score: {score}</div>
     } else {
-        scoreBox = <div className='score' onClick={() => handleScore()}>Your final score is: {score}!</div>
+        scoreBox = <div className='score-final' onClick={() => handleScore()}>Your final score is: {score}!</div>
     }
 
     return (
