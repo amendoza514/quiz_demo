@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import './Answer.css';
 
 function Answer({ content, correct, reveal, show, score }) {
-    console.log(content)
 
     const handleScore = () => {
         if (correct === content) score()

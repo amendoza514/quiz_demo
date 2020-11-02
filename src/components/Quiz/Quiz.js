@@ -33,15 +33,19 @@ function Quiz() {
     const handleQuestionResponse = (response) => {
         setQuestions(response);
         let answers = getAnswers(response[0]);
-        let curQuest = <Question score={() => setScore(score + 1)} next={(index) => nextQuestion(index, response)} data={response[0]} index={0} answers={answers}/>
+        let curQuest = <Question score={() => handleScore()} next={(index) => nextQuestion(index, response)} data={response[0]} index={0} answers={answers} />
         setCurrentQuestion(curQuest);
+    }
+    
+    const handleScore = () => {
+        setScore(score + 1)
     }
 
     const nextQuestion = (index, qs) => {
         let newIndex = parseInt(index) + 1;
         let newQuestion = qs[newIndex];
         let answers = getAnswers(newQuestion);
-        let newComponent = <Question score={() => setScore(score + 1)} next={(i) => nextQuestion(i, qs)} data={newQuestion} index={newIndex} answers={answers}/>
+        let newComponent = <Question score={() => handleScore()} next={(i) => nextQuestion(i, qs)} data={newQuestion} index={newIndex} answers={answers} />
         setCurrentQuestion(newComponent);
     }
 
@@ -63,7 +67,7 @@ function Quiz() {
 
     return (
         <>
-            <div className='score' onClick={() => setScore(score + 1)}>score: {score}</div>
+            <div className='score' onClick={() => handleScore()}>score: {score}</div>
             { currentQuestion ? currentQuestion : loading }
         </>
     );

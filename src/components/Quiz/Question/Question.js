@@ -6,9 +6,11 @@ function Question({ next, data, score, index, answers }) {
     //const [answers, setAnswers] = useState([]);
     const [revealState, setRevealState] = useState(false);
 
+
     useEffect(() => {
-        //refreshAnswers();
-    }, []);
+        // check()
+        console.log('asdasd')
+    });
 
     /*
     const refreshAnswers = () => {
@@ -30,6 +32,7 @@ function Question({ next, data, score, index, answers }) {
 
     const goToNext = () => {
         next(index);
+        setRevealState(false)
         //refreshAnswers();
     }
 
@@ -48,14 +51,14 @@ function Question({ next, data, score, index, answers }) {
                                 correct={data.correct}
                                 score={score}
                                 show = {revealState}
-                                reveal={() => setRevealState(!revealState)}
+                                reveal={() => setRevealState(true)}
                             />
                         )
                     })}
                 </div>
             </div>
                 <div className="next-button" onClick={goToNext}>
-                    <i class="fas fa-long-arrow-alt-right"></i>
+                    <i className="fas fa-long-arrow-alt-right"></i>
                 </div>
       </>
     );
