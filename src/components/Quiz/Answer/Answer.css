@@ -3,6 +3,7 @@
     flex-wrap: wrap;
     text-align: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 .answer {

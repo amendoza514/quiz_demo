@@ -92,9 +92,9 @@ function Quiz() {
     let scoreBox;
 
     if (!finished) {
-        scoreBox = <div className='score' onClick={() => handleScore()}>score: {score}</div>
+        scoreBox = <div className='score' >score: {score}</div>
     } else {
-        scoreBox = <div className='score-final' onClick={() => handleScore()}>Your final score is: {score}!</div>
+        scoreBox = <div className='score-final' >Your final score is: {score}!</div>
     }
 
     return (

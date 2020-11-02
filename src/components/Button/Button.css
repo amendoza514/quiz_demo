@@ -51,7 +51,7 @@
 .button--large:hover, .button--medium:hover, .button--mobile:hover {
     transition: all 0.3s ease-out;
     background: #fff;
-    color: #242424
+    color: #242424;
 }
 
 .button-wide:hover {
@@ -105,4 +105,6 @@
     width: 100%;
 }
 
-
+button.button.button--outline.button--medium.null {
+    cursor: pointer;
+}

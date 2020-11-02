@@ -7,6 +7,7 @@
     margin-top: 97px;
     color: white;
     border-radius: 5px;
+    cursor: default;
 }
 
 .question-prompt {
@@ -22,6 +23,7 @@
     white-space: pre-wrap;
     padding: 50px;
     border-radius: 5px;
+    cursor: default;
 }
 .next-button {
     background-color: slategrey;
@@ -37,6 +39,7 @@
     color: white;
     font-size: 40px;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .next-button:hover {
@@ -53,6 +56,7 @@
     color: white;
     font-size: 40px;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .next-button:active {
@@ -69,4 +73,6 @@
     color: white;
     font-size: 40px;
     border-radius: 5px;
+    cursor: pointer;
+
 }
