@@ -7,9 +7,7 @@ function Navbar() {
     let [click, setClick] = useState(false)
 
     // let handleClick = () => setClick(!click);
-    // unnecessary code
-
-
+    
     return (
       <>
           <div className="navbar">
@@ -21,19 +19,14 @@ function Navbar() {
               </div>
               <ul className={"nav-menu"}>
                 <li className="nav-item">
-                  <Link to="/" className="nav-links" onClick={() => setClick(false)} >
-                    Home
-                  </Link>
+                <a href='https://www.linkedin.com/in/alex-mendoza-aa4615b5/' className='linkedin-icon'>
+                        <i className="fab fa-linkedin"></i>
+                    </a>
                 </li>
                 <li className="nav-item">
-                  <Link to="/projects" className="nav-links" onClick={() => setClick(false)} >
-                    Projects
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link to="/services" className="nav-links" onClick={() => setClick(false)} >
-                    Services
-                  </Link>
+                  <a href='https://github.com/amendoza514' className='linkedin-icon' className='subs-icon'>
+                        <i className="fab fa-github"></i>
+                    </a>
                 </li>
                 <li className="nav-button">
                    <Link to="/signup" className="button-link">

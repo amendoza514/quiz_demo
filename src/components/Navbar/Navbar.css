@@ -56,14 +56,16 @@
 }
 
 .nav-item {
-  height: 80px;
-  border-bottom: 2px solid transparent;
-  
+    height: 80px;
+    margin-top: 22px;
+    font-size: 40px;
+    margin-right: 25px;
+    border-bottom: 2px solid transparent;
 }
 
-.nav-item:hover {
+/* .nav-item:hover {
   border-bottom: 2px solid #f00946;
-}
+} */
 
 .nav-links {
   color: white;
@@ -83,3 +85,18 @@
   display: none;
 }
 
+i.fab.fa-linkedin {
+    color: white;
+}
+
+i.fab.fa-github {
+    color: white;
+}
+
+i.fab.fa-linkedin:hover {
+    color: royalblue;
+}
+
+i.fab.fa-github:hover {
+    color: #500750;
+}
