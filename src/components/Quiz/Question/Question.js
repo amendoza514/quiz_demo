@@ -3,14 +3,7 @@ import Answer from '../Answer/Answer';
 import './Question.css'
 
 function Question({ next, data, score, index, answers }) {
-    //const [answers, setAnswers] = useState([]);
     const [revealState, setRevealState] = useState(false);
-
-
-    useEffect(() => {
-        // check()
-        console.log('asdasd')
-    });
 
     /*
     const refreshAnswers = () => {

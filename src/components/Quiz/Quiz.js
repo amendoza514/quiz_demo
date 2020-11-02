@@ -25,7 +25,6 @@ function Quiz() {
             handleQuestionResponse(jsonResponse);
         };
         req.send();
-        // console.log(questions);
     }
 
     useEffect(fetchQuestions, []);
@@ -36,11 +35,6 @@ function Quiz() {
         let curQuest = <Question score={() => handleScore()} next={(index) => nextQuestion(index, response)} data={response[0]} index={0} answers={answers} />
         setCurrentQuestion(curQuest);
     }
-    
-    // const handleScore = () => {
-    //     console.log(score)
-    //     setScore(score + 1)
-    // }
 
     async function handleScore () {
     await setScore(score => score + 1);
