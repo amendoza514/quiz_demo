@@ -9,47 +9,55 @@
 .answer {
     background-color: slategrey;
     margin: 10px;
-    width: 82%;
-    height: 4rem;
+    width: 46%;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 25px;
+    white-space: pre-wrap;
+    padding: 19px;
     border-radius: 5px;
 }
 
 .answer:hover {
     background-color: rgb(127, 136, 145);
     margin: 10px;
-    width: 82%;
-    height: 4rem;
+    width: 46%;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 25px;
+    white-space: pre-wrap;
+    padding: 19px;
     border-radius: 5px;
 }
 
 .answer-correct {
     background-color: green;
     margin: 10px;
-    width: 82%;
-    height: 4rem;
+    width: 46%;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 25px;
+    white-space: pre-wrap;
+    padding: 19px;
     border-radius: 5px;
 }
 
 .answer-incorrect {
     background-color: red;
     margin: 10px;
-    width: 82%;
-    height: 4rem;    
+    width: 46%;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 25px;
+    white-space: pre-wrap;
+    padding: 19px;
     border-radius: 5px;
 }

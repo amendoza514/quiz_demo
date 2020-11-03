@@ -3,11 +3,13 @@
     font-family: 'Overpass', sans-serif;
     justify-content: center;
     width: 65%;
-    height: 65%;
+    height: fit-content;
     margin-top: 97px;
     color: white;
     border-radius: 5px;
     cursor: default;
+    text-align: -webkit-center;
+    padding-bottom: 21.5px;
 }
 
 .question-prompt {
@@ -25,17 +27,20 @@
     border-radius: 5px;
     cursor: default;
 }
+
+.button-list {
+    display: flex;
+    justify-content: center;
+}
+
 .next-button {
     background-color: slategrey;
     width: 75px;
-    height: 50px;    
+    margin-top: 10px;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    bottom: 0;
-    margin-bottom: 62px;
-    z-index: 1000;
     color: white;
     font-size: 40px;
     border-radius: 5px;
@@ -45,14 +50,11 @@
 .next-button:hover {
     background-color: rgb(127, 136, 145);
     width: 75px;
-    height: 50px;    
+    margin-top: 10px;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    bottom: 0;
-    margin-bottom: 62px;
-    z-index: 1000;
     color: white;
     font-size: 40px;
     border-radius: 5px;
@@ -62,17 +64,61 @@
 .next-button:active {
     background-color: rgb(192, 192, 192);
     width: 75px;
-    height: 50px;    
+    height: 50px;
+    margin-top: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    bottom: 0;
-    margin-bottom: 62px;
-    z-index: 1000;
     color: white;
     font-size: 40px;
     border-radius: 5px;
     cursor: pointer;
-
 }
+
+.home-button {
+    background-color: slategrey;
+    width: 75px;
+    margin-top: 10px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 33px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.home-button:hover {
+    background-color: rgb(127, 136, 145);
+    width: 75px;
+    margin-top: 10px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 33px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.home-button:active {
+    background-color: rgb(192, 192, 192);
+    width: 75px;
+    height: 50px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 33px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+
+

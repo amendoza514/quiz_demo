@@ -5,7 +5,7 @@ import Question from './Question/Question'
 import './Quiz.css';
 import { API_KEY } from '../../secrets';
 
-function Quiz() {
+function Quiz({ home }) {
     const [questions, setQuestions] = useState(0);
     const [score, setScore] = useState(0);
     const [finished, setFinishState] = useState(false)
@@ -37,7 +37,7 @@ function Quiz() {
     const handleQuestionResponse = (response) => {
         setQuestions(response);
         let answers = getAnswers(response[0]);
-        let curQuest = <Question score={() => handleScore()} next={(index) => nextQuestion(index, response)} data={response[0]} index={0} answers={answers} />
+        let curQuest = <Question home={home} score={() => handleScore()} next={(index) => nextQuestion(index, response)} data={response[0]} index={0} answers={answers} />
         setCurrentQuestion(curQuest);
     }
 
@@ -69,7 +69,7 @@ function Quiz() {
              setCurrentQuestion(newComponent);
         } else {
             let answers = getAnswers(newQuestion);
-            let newComponent = <Question score={() => handleScore()} next={(i) => nextQuestion(i, qs)} data={newQuestion} index={newIndex} answers={answers} />
+            let newComponent = <Question home={home} score={() => handleScore()} next={(i) => nextQuestion(i, qs)} data={newQuestion} index={newIndex} answers={answers} />
             setCurrentQuestion(newComponent);
         }
     }

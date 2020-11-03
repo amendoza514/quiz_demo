@@ -2,26 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Answer from '../Answer/Answer';
 import './Question.css'
 
-function Question({ next, data, score, index, answers }) {
+function Question({ home, next, data, score, index, answers }) {
     const [revealState, setRevealState] = useState(false);
-
-    /*
-    const refreshAnswers = () => {
-        let store = []
-        if (data) {
-            for (let i = 0; i < 3; i++) {
-                store.push(data.incorrect[i])
-            }
-            store.push(data.correct)
-        }
-
-        let shuffled = store.map(a => ({ sort: Math
-                        .random(), value: a }))
-                        .sort((a, b) => a.sort - b.sort)
-                        .map(a => a.value)
-        setAnswers(shuffled);
-    }
-    */
 
     const goToNext = () => {
         next(index);
@@ -49,10 +31,15 @@ function Question({ next, data, score, index, answers }) {
                         )
                     })}
                 </div>
-            </div>
-                <div className="next-button" onClick={goToNext}>
-                    <i className="fas fa-long-arrow-alt-right"></i>
+                <div className='button-list'>
+                    <div className="home-button" onClick={home}>
+                        <i className="fas fa-home"></i>
+                    </div>
+                    <div className="next-button" onClick={goToNext}>
+                        <i className="fas fa-long-arrow-alt-right"></i>
+                    </div>
                 </div>
+            </div>
       </>
     );
 }
