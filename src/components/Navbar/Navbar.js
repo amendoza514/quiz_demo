@@ -5,8 +5,6 @@ import './Navbar.css'
 
 function Navbar() {
     let [click, setClick] = useState(false)
-
-    // let handleClick = () => setClick(!click);
     
     return (
       <>
