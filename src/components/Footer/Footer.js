@@ -9,7 +9,7 @@ function Footer() {
           <div className="footer">
             <div className="footer-container container">
               <Link to="/" className="footer-logo" >
-                a simple quiz app created by Alex Mendoza
+                a simple quiz app created by alex mendoza
               </Link>
               <div className="menu-icon" >
               </div>
