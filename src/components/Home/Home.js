@@ -17,7 +17,7 @@ function Home() {
                     <div className='intro-description'>Choose a quiz to get started, and press home at any point to return here!</div>
                   <div className='quiz-list'>
                     <div className='quiz-item' onClick={() => { setQuizState(0); setStartState(true);}} >Tandem's Trivia</div>
-                    <div className='quiz-item' onClick={() => { setQuizState(1); setStartState(true);}} >How well do you know Alex's LinkedIn Profile?</div>
+                    <div className='quiz-item' onClick={() => { setQuizState(1); setStartState(true);}} >Do you know Alex's LinkedIn?</div>
                   </div>
                 </div>
             </div> : '' }  

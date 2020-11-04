@@ -100,6 +100,23 @@ function Quiz({ home, quizidx }) {
 
     let loading = <div className='loading'>Loading...</div>
     let scoreBox;
+    let scoreBlurb;
+    
+    if ((score / count) === 1) {
+        scoreBlurb = 'Perfect!'
+    } else if ((score / count) > .9000) {
+        scoreBlurb = 'Almost perfect!'
+    } else if ((score / count) > .8000) {
+        scoreBlurb = 'Solid score!'
+    } else if ((score / count) > .7000) {
+        scoreBlurb = 'Still a passing grade!'
+    } else if ((score / count) > .4000) {
+        scoreBlurb = 'Maybe try again?'
+    } else if ((score / count) > .1000) {
+        scoreBlurb = 'Well you got at least one right'
+    } else {
+        scoreBlurb = 'This did not go well...'
+    }
 
     if (!finished) {
         scoreBox = <div className='score' >score: {score}</div>
@@ -117,6 +134,7 @@ function Quiz({ home, quizidx }) {
                 <div className='percent'>
                     {Math.round((score / count) * 100)} %
                 </div>
+                <div className='score-blurb'>{scoreBlurb}</div>
                 <div className='end-buttons'>
                 <div className='end-button' onClick={() => { resetScore(); fetchQuestions();}} >
                     Retry
