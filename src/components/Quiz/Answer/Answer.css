@@ -35,7 +35,7 @@
 }
 
 .answer-correct {
-    background-color: green;
+    background-color: #33d233;
     margin: 10px;
     width: 46%;
     height: auto;
@@ -46,10 +46,11 @@
     white-space: pre-wrap;
     padding: 15px;
     border-radius: 5px;
+    transition: ease-in .2s;
 }
 
 .answer-incorrect {
-    background-color: red;
+    background-color: #c75555;
     margin: 10px;
     width: 46%;
     height: auto;
@@ -60,4 +61,5 @@
     white-space: pre-wrap;
     padding: 15px;
     border-radius: 5px;
+    transition: ease-in .2s;
 }
