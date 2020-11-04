@@ -6,6 +6,7 @@ import './Home.css'
 
 function Home() {
     const [start, setStartState] = useState(false);
+    const [quizType, setQuizState] = useState(null)
 
     return (
       <>
@@ -15,12 +16,12 @@ function Home() {
                     <div style={{ fontSize: '30px'}}>Welcome to All That Apply!</div>
                     <div className='intro-description'>Choose a quiz to get started, and press home at any point to return here!</div>
                   <div className='quiz-list'>
-                    <div className='quiz-item' onClick={() => setStartState(true)}>Choice One</div>
-                    <div className='quiz-item'>Choice Two</div>
+                    <div className='quiz-item' onClick={() => { setQuizState(0); setStartState(true);}} >Tandem's Trivia</div>
+                    <div className='quiz-item' onClick={() => { setQuizState(1); setStartState(true);}} >How well do you know Alex's LinkedIn Profile?</div>
                   </div>
                 </div>
             </div> : '' }  
-          {start ? <Quiz home={() => setStartState(false)}/>  : ''}
+          {start ? <Quiz home={() => setStartState(false)} quizidx={quizType}/>  : ''}
         </div>}
       </>
     );

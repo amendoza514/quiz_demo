@@ -22,7 +22,12 @@ function Navbar() {
                     </a>
                 </li>
                 <li className="nav-item">
-                  <a href='https://github.com/amendoza514' className='linkedin-icon' className='subs-icon'>
+                  <a 
+                    href='https://github.com/amendoza514' 
+                    className='linkedin-icon' 
+                    className='subs-icon'
+                    style={{ marginRight: '-10px'}}
+                  >
                         <i className="fab fa-github"></i>
                     </a>
                 </li>

@@ -5,7 +5,7 @@ import Question from './Question/Question'
 import './Quiz.css';
 import { API_KEY } from '../../secrets';
 
-function Quiz({ home }) {
+function Quiz({ home, quizidx }) {
     const [questions, setQuestions] = useState(0);
     const [score, setScore] = useState(0);
     const [finished, setFinishState] = useState(false)
@@ -13,6 +13,10 @@ function Quiz({ home }) {
     const [questionComponents, setQuestionCompenents] = useState([]);
     const [currentQuestion, setCurrentQuestion] = useState(null);
 
+    let quiz = [
+        'https://api.jsonbin.io/b/5f9b01129291173cbca5711d',
+        'https://api.jsonbin.io/b/5fa1e43d47077d298f5ca0e2/1'
+    ];
     let possibleScore;
 
     const fetchQuestions = () => {
@@ -22,7 +26,7 @@ function Quiz({ home }) {
         if (req.readyState == XMLHttpRequest.DONE) {
         }
         };
-        req.open("GET", 'https://api.jsonbin.io/b/5f9b01129291173cbca5711d', true);
+        req.open("GET", quiz[quizidx], true);
         req.setRequestHeader("secret-key", API_KEY);
         req.onload  = function() {
             var jsonResponse = JSON.parse(req.responseText);
@@ -57,7 +61,10 @@ function Quiz({ home }) {
             let newComponent = 
             <div className="end-container container" >
                 <div className='end-prompt' onClick={() => { resetScore(); fetchQuestions();}} >
-                    Go Again!
+                    Go Again
+                </div>
+                <div className='end-prompt' onClick={home} >
+                    Home
                 </div>
                 {/* <div className='score-result'>
                     {currentScore} out of {possibleScore}
@@ -94,15 +101,21 @@ function Quiz({ home }) {
     if (!finished) {
         scoreBox = <div className='score' >score: {score}</div>
     } else {
-        scoreBox = <div className='score-final' >Your final score is: {score}!</div>
+        scoreBox = 
+        <>
+            <div className='score-final' >
+                Your final score is...
+            </div>
+            <div>{score}</div>
+        </>
     }
 
     return (
         <>
-            {scoreBox}
-            { currentQuestion ? currentQuestion : loading }
+                { currentQuestion ? scoreBox : '' }
+                { currentQuestion ? currentQuestion : loading }
         </>
     );
 }
 
-export default Quiz
+export default Quiz;

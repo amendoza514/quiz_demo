@@ -1,22 +1,21 @@
 .navbar {
-  background: #151717;
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.2rem;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  font-family: 'Permanent Marker', cursive;
+    background: #151717;
+    height: 80px;
+    display: flex;
+    width: -webkit-fill-available;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: absolute;
+    top: 0;
+    z-index: 999;
+    font-family: 'Permanent Marker', cursive;
 }
-
 
 .navbar-container {
   display: flex;
   justify-content: space-between;
   height: 80px;
-  
 }
 
 .container {
@@ -33,7 +32,7 @@
 .navbar-logo {
   color: white;
   justify-self: start;
-  cursor: pointer;
+  cursor: default;
   text-decoration: none;
   font-size: 2rem;
   display: flex;

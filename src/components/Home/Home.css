@@ -4,7 +4,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    /* align-items: center; */
+    align-items: center;
     font-family: 'Permanent Marker', cursive;
     cursor: default;
 }
@@ -14,11 +14,11 @@
     font-family: 'Overpass', sans-serif;
     justify-content: center;
     width: 65%;
-    height: 65%;
-    margin-top: 97px;
+    height: fit-content;
     color: white;
     border-radius: 5px;
     cursor: default;
+    padding-bottom: 60px;
 }
 
 .welcome {
@@ -56,6 +56,8 @@
     justify-content: center;
     font-size: 25px;
     border-radius: 5px;
+    white-space: pre-wrap;
+    padding: 45px
 }
 
 .quiz-item:hover {
@@ -68,6 +70,8 @@
     justify-content: center;
     font-size: 25px;
     border-radius: 5px;
+    white-space: pre-wrap;
+    padding: 45px
 }
 
 .quiz-item:active {
@@ -80,4 +84,6 @@
     justify-content: center;
     font-size: 25px;
     border-radius: 5px;
+    white-space: pre-wrap;
+    padding: 45px
 }

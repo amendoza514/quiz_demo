@@ -17,7 +17,8 @@
     align-items: center;
     position: absolute;
     color: white;
-    margin-top: 17px;
+    margin-top: 122px;
+    top: 0;
     border-radius: 5px;
     cursor: default;
 }
@@ -33,7 +34,8 @@
     align-items: center;
     position: absolute;
     color: white;
-    margin-top: 17px;
+     margin-top: 122px;
+    top: 0;
     border-radius: 5px;
     cursor: default;
 }
