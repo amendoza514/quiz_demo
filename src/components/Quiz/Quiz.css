@@ -17,10 +17,18 @@
     align-items: center;
     position: absolute;
     color: white;
-    margin-top: 122px;
+    margin-top: 100px;
     top: 0;
     border-radius: 5px;
     cursor: default;
+}
+
+.score-final-container {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    top: 0;
+    margin-top: 100px;
 }
 
 .score-final {
@@ -34,7 +42,6 @@
     align-items: center;
     position: absolute;
     color: white;
-     margin-top: 122px;
     top: 0;
     border-radius: 5px;
     cursor: default;
@@ -43,30 +50,38 @@
 
 .end-container {
     font-family: 'Overpass', sans-serif;
-    justify-content: center;
+    background-color: #4c6266;
     width: 65%;
-    height: 65vh;
-    margin-top: 97px;
+    height: 51vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     color: white;
     border-radius: 5px;
     text-align: -webkit-center;
-
 }
 
-.end-prompt {
+.end-buttons {
+    display: flex;
+    flex-direction: row;
+    margin-top: 25px;
+}
+
+.end-button {
     display: flex;
     margin-top: 21.5px;
-    margin-bottom: .7rem;
-    width: 60%;
-    height: 15%;
+    width: 145px;
+    height: 60px;
     font-size: 25px;
     background-color: slategrey;
     justify-content: center;
     align-items: center;
     white-space: pre-wrap;
-    padding: 50px;
     border-radius: 5px;
     cursor: pointer;
+    /* margin-left: 0px; */
+    margin: 14px;
 }
 
 .score-result {
@@ -79,4 +94,8 @@
     font-size: 35px;
     border-radius: 5px;
     cursor: default;
+}
+
+.percent {
+    font-size: 30px;
 }

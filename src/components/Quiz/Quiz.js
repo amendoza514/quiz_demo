@@ -8,34 +8,33 @@ import { API_KEY } from '../../secrets';
 function Quiz({ home, quizidx }) {
     const [questions, setQuestions] = useState(0);
     const [score, setScore] = useState(0);
-    const [finished, setFinishState] = useState(false)
+    const [count, setCount] = useState(0);
+    const [finished, setFinishState] = useState(false);
     const [sequence, setSequence] = useState(0);
-    const [questionComponents, setQuestionCompenents] = useState([]);
     const [currentQuestion, setCurrentQuestion] = useState(null);
 
     let quiz = [
         'https://api.jsonbin.io/b/5f9b01129291173cbca5711d',
         'https://api.jsonbin.io/b/5fa1e43d47077d298f5ca0e2/1'
     ];
-    let possibleScore;
-
+    
     const fetchQuestions = () => {
-        setFinishState(false)
+        setFinishState(false);
         let req = new XMLHttpRequest();
         req.onreadystatechange = () => {
-        if (req.readyState == XMLHttpRequest.DONE) {
-        }
+            if (req.readyState == XMLHttpRequest.DONE) {
+            }
         };
         req.open("GET", quiz[quizidx], true);
         req.setRequestHeader("secret-key", API_KEY);
         req.onload  = function() {
             var jsonResponse = JSON.parse(req.responseText);
-            possibleScore = jsonResponse.length;
+            handleCount(jsonResponse)
             handleQuestionResponse(jsonResponse);
         };
         req.send();
     }
-
+    
     useEffect(fetchQuestions, []);
 
     const handleQuestionResponse = (response) => {
@@ -43,6 +42,10 @@ function Quiz({ home, quizidx }) {
         let answers = getAnswers(response[0]);
         let curQuest = <Question home={home} score={() => handleScore()} next={(index) => nextQuestion(index, response)} data={response[0]} index={0} answers={answers} />
         setCurrentQuestion(curQuest);
+    }
+
+    const handleCount = (jsonResponse) => {
+        setCount(jsonResponse.length)
     }
 
     async function handleScore () {
@@ -58,21 +61,23 @@ function Quiz({ home, quizidx }) {
         let newQuestion = qs[newIndex];
         if (!newQuestion) {
             setFinishState(true)
-            let newComponent = 
-            <div className="end-container container" >
-                <div className='end-prompt' onClick={() => { resetScore(); fetchQuestions();}} >
-                    Go Again
-                </div>
-                <div className='end-prompt' onClick={home} >
-                    Home
-                </div>
-                {/* <div className='score-result'>
-                    {currentScore} out of {possibleScore}
-                </div>
-                <div className='percent'>
-                    {currentScore / possibleScore}
-                </div> */}
-            </div>
+            let newComponent = <div></div>
+            // <div className="end-container container" >
+            //     <div className='score-result'>
+            //         {score}
+            //     </div>
+            //     <div className='percent'>
+            //         {Math.ceil(score / possibleScore)} %
+            //     </div>
+            //     <div className='end-buttons'>
+            //     <div className='end-button' onClick={() => { resetScore(); fetchQuestions();}} >
+            //         Retry
+            //     </div>
+            //     <div className='end-button' onClick={home} >
+            //         Home
+            //     </div>
+            //     </div>
+            // </div>
              setCurrentQuestion(newComponent);
         } else {
             let answers = getAnswers(newQuestion);
@@ -101,13 +106,31 @@ function Quiz({ home, quizidx }) {
     if (!finished) {
         scoreBox = <div className='score' >score: {score}</div>
     } else {
+        console.log(score)
+        console.log(count)
         scoreBox = 
         <>
-            <div className='score-final' >
-                Your final score is...
-            </div>
+        <div className='score-final-container'>
+            <div className='score-final' >Your final score is...</div>
             <div>{score}</div>
-        </>
+        </div>
+        <div className="end-container container" >
+                <div className='score-result'>
+                    {score} out of {count}
+                </div>
+                <div className='percent'>
+                    {Math.round((score / count) * 100)} %
+                </div>
+                <div className='end-buttons'>
+                <div className='end-button' onClick={() => { resetScore(); fetchQuestions();}} >
+                    Retry
+                </div>
+                <div className='end-button' onClick={home} >
+                    Home
+                </div>
+                </div>
+            </div>
+            </>
     }
 
     return (
