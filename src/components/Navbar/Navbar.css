@@ -38,6 +38,12 @@
   align-items: center;
 }
 
+i.fas.fa-check {
+    font-weight: 600;
+    font-size: 35px;
+    margin-left: -10px;
+}
+
 .navbar-icon {
   margin-right: 0.5rem;
 }

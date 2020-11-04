@@ -11,7 +11,9 @@ function Navbar() {
           <div className="navbar">
             <div className="navbar-container container">
               <Link to="/" className="navbar-logo" onClick={() => setClick(false)} >
-                All That Apply!
+                All That Apply &nbsp;<i className="fas fa-check"></i>
+
+
               </Link>
               <div className="menu-icon" onClick={() => setClick(!click)}>
               </div>
