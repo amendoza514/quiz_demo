@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import Answer from './Answer/Answer';
 import Question from './Question/Question'
 import './Quiz.css';
 import { API_KEY } from '../../secrets';
@@ -106,8 +104,6 @@ function Quiz({ home, quizidx }) {
     if (!finished) {
         scoreBox = <div className='score' >score: {score}</div>
     } else {
-        console.log(score)
-        console.log(count)
         scoreBox = 
         <>
         <div className='score-final-container'>
