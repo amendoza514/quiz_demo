@@ -98,7 +98,8 @@ function Quiz({ home, quizidx }) {
         return shuffled
     }
 
-    let loading = <div className='loading'>Loading...</div>
+    let loading = 
+        <div className="loader">Loading<span className="loader__dot">.</span><span className="loader__dot">.</span><span className="loader__dot">.</span></div>
     let scoreBox;
     let scoreBlurb;
     
@@ -113,7 +114,7 @@ function Quiz({ home, quizidx }) {
     } else if ((score / count) > .4000) {
         scoreBlurb = 'Maybe try again?'
     } else if ((score / count) > .1000) {
-        scoreBlurb = 'Well you got at least one right'
+        scoreBlurb = 'You got at least one right'
     } else {
         scoreBlurb = 'This did not go well...'
     }
@@ -131,7 +132,7 @@ function Quiz({ home, quizidx }) {
                     {score} out of {count}
                 </div>
                 <div className='percent'>
-                    {Math.round((score / count) * 100)} %
+                    {Math.round((score / count) * 100)}%
                 </div>
                 <div className='score-blurb'>{scoreBlurb}</div>
                 <div className='end-buttons'>

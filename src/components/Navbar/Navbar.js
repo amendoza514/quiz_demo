@@ -11,7 +11,7 @@ function Navbar() {
           <div className="navbar">
             <div className="navbar-container container">
               <Link to="/" className="navbar-logo" onClick={() => setClick(false)} >
-                All That Apply !
+                All That Apply!
               </Link>
               <div className="menu-icon" onClick={() => setClick(!click)}>
               </div>
@@ -34,7 +34,7 @@ function Navbar() {
                 <li className="nav-button">
                    <Link to="/" className="button-link">
                      {/* <Link to="/signup" className="button-link"> */}
-                      <Button buttonStyle="button--outline" onClick={() =>  window.location.href = `mailto:${'alexjmendoza514@gmail.com'}`}>Contact Me</Button>
+                      <Button buttonStyle="button--outline" onClick={() =>  window.location.href = `mailto:${'alexjmendoza514@gmail.com'}`}>contact me</Button>
                     </Link>
                 </li>
               </ul>

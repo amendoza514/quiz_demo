@@ -1,14 +1,21 @@
-.loading {
+.loader {
     display: flex;
     align-self: center;
     margin-bottom: 26%;
     color: white;
     font-size: 30px;
+    font-family: 'Pacifico', cursive;
+    font-weight: 100;
 }
 
+@keyframes blink {50% { color: transparent }}
+.loader__dot { animation: 1s blink infinite }
+.loader__dot:nth-child(2) { animation-delay: 250ms }
+.loader__dot:nth-child(3) { animation-delay: 500ms }
+
 .score {
-    background-color: #1b2025d9;
-    font-family: 'Overpass', sans-serif;
+    background-color: #131f2f;
+    font-family: 'Roboto';
     font-size: 25px;
     padding: 40px;
     height: 4rem;
@@ -33,8 +40,8 @@
 }
 
 .score-final {
-    background-color: #1b2025d9;;
-    font-family: 'Overpass', sans-serif;
+    background-color: #131f2f;;
+    font-family: 'Roboto';
     font-size: 25px;
     /* width: 14rem; */
     padding: 40px;
@@ -51,8 +58,8 @@
 
 
 .end-container {
-    font-family: 'Overpass', sans-serif;
-    background-color: #111f679c;
+    font-family: 'Roboto';
+    background-color: #18274294;
     width: 65%;
     height: 51vh;
     display: flex;
@@ -68,6 +75,7 @@
     display: flex;
     flex-direction: row;
     margin-top: 25px;
+    
 }
 
 .end-button {
@@ -76,13 +84,13 @@
     width: 145px;
     height: 60px;
     font-size: 25px;
-    background-color: #1b2025;
+    background-color: #131f2f;
     justify-content: center;
     align-items: center;
     white-space: pre-wrap;
     border-radius: 5px;
     cursor: pointer;
-    /* margin-left: 0px; */
+    box-shadow: 4px 4px 7px black;    
     margin: 14px;
     transition: all 0.3s ease-out;
 
@@ -93,7 +101,6 @@
 }
 
 .score-result {
-    margin: 10px;
     width: 82%;
     height: 5rem;
     display: flex;
@@ -106,4 +113,8 @@
 
 .percent {
     font-size: 30px;
+}
+
+.score-blurb {
+    margin-top: 10px;
 }

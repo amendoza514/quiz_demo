@@ -19,16 +19,12 @@
     padding: 8px 20px;
     border: 2px solid #313131;
     transition: all 0.3s ease-out;
+    
 }
 
 .button--medium {
-    padding: 8px 20px;
-    font-size: 18px
-}
-
-.button--medium {
-    padding: 12px 26px;
-    font-size: 21px
+    padding: 12px 22px;
+    font-size: 19px
 }
 
 .button--mobile {
@@ -108,4 +104,5 @@ button.button.button--outline.button--medium.null {
     cursor: pointer;
     border-radius: 25px;
     border-color: white;
+    font-family: 'Roboto';
 }

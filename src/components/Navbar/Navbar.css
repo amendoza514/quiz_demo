@@ -4,12 +4,11 @@
     width: -webkit-fill-available;
     justify-content: center;
     align-items: center;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     position: absolute;
     top: 0;
-    z-index: 999;
-    font-family: 'Permanent Marker', cursive;
-    font-weight: bolder;
+    z-index: 999; 
+    font-family: 'Pacifico', cursive;
 }
 
 .navbar-container {
@@ -34,7 +33,7 @@
   justify-self: start;
   cursor: default;
   text-decoration: none;
-  font-size: 2rem;
+  font-size: 37px;
   display: flex;
   align-items: center;
 }

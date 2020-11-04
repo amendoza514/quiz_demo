@@ -13,8 +13,8 @@ function Home() {
         {<div className="home">
           {!start ? <div className="home-container container" >
                 <div className='welcome'>
-                    <div className='welcome-title'>Welcome to All That Apply!</div>
-                    <div className='intro-description'>Choose a quiz to get started, and press home at any point to return here!</div>
+                    <div className='welcome-title'>Welcome!</div>
+                    <div className='intro-description'>Choose a quiz to get started and press home at any point to return here</div>
                   <div className='quiz-list'>
                     <div className='quiz-item' onClick={() => { setQuizState(0); setStartState(true);}} >Tandem's Trivia</div>
                     <div className='quiz-item' onClick={() => { setQuizState(1); setStartState(true);}} >Do you know Alex's LinkedIn?</div>
