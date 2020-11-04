@@ -7,17 +7,17 @@
     white-space: nowrap;
 }
 
-.button--primary {
+/* /* .button--primary {
     background-color: var(--primary);
     color: #242424;
     border: 1px solid var(--primary)
-}
+} */
 
 .button--outline {
     background-color: transparent;
     color: white;
     padding: 8px 20px;
-    border: 1px solid #313131;
+    border: 2px solid #313131;
     transition: all 0.3s ease-out;
 }
 
@@ -52,15 +52,14 @@
     transition: all 0.3s ease-out;
     background: #fff;
     color: #242424;
-}
+} */
 
 .button-wide:hover {
     color: #fff;
-    background-color: #f00946;
     transition: all 0.3s ease-out; 
 }
 
-.blue {
+/* .blue {
     background-color: #276afb;
     color: #fff;
     border: none;
@@ -76,7 +75,7 @@
     background-color: #242424;
     color: #fff;
     border: none;
-}
+} */
 
 .primary:hover {
     background-color: #fff;
@@ -107,4 +106,6 @@
 
 button.button.button--outline.button--medium.null {
     cursor: pointer;
+    border-radius: 25px;
+    border-color: white;
 }

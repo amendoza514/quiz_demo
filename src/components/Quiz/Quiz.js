@@ -125,7 +125,6 @@ function Quiz({ home, quizidx }) {
         <>
         <div className='score-final-container'>
             <div className='score-final' >Your final score is...</div>
-            <div>{score}</div>
         </div>
         <div className="end-container container" >
                 <div className='score-result'>

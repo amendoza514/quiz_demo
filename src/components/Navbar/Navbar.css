@@ -1,5 +1,4 @@
 .navbar {
-    background: #151717;
     height: 80px;
     display: flex;
     width: -webkit-fill-available;
@@ -10,6 +9,7 @@
     top: 0;
     z-index: 999;
     font-family: 'Permanent Marker', cursive;
+    font-weight: bolder;
 }
 
 .navbar-container {
@@ -21,7 +21,7 @@
 .container {
   z-index: 1;
   width: 100%;
-  max-width: 1300px;
+  /* max-width: 1300px; */
   margin-right: auto;
   margin-left: auto;
   padding-right: 50px;
@@ -51,7 +51,7 @@
   text-align: center;
   justify-content: end;
   font-family: 'Overpass', sans-serif;
-
+  margin-right: -20px;
 }
 
 .nav-item {
