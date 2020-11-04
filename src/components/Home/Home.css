@@ -9,6 +9,10 @@
     cursor: default;
 }
 
+.welcome-title {
+    font-size: 30px
+}
+
 .home-container {
     background-color: #4c6266;
     font-family: 'Overpass', sans-serif;
@@ -87,3 +91,93 @@
     white-space: pre-wrap;
     padding: 45px
 }
+
+@media screen and (max-width: 960px) {
+    .quiz-container {
+        width: 90%;
+    }
+
+    .question-prompt {
+        font-size: 20px
+    }
+
+    .answer, .answer:hover, .answer-correct, .answer-incorrect {
+        font-size: 15px;
+        width: 100%;
+    }
+
+    .score {
+        font-size: 20px;
+    }
+
+    .score-final {
+        font-size: 20px;
+    }
+
+    .score-result {
+        font-size: 30px;
+        margin: 0px
+    }
+
+    .end-buttons {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    .end-button {
+        font-size: 20px;
+    }
+
+    .intro-description {
+    white-space: pre-wrap;
+    text-align: -webkit-center;
+    font-size: 15px;
+    }
+
+    .quiz-item {
+        background-color: slategrey;
+        margin: 10px;
+        width: 82%;
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+        border-radius: 5px;
+        white-space: pre-wrap;
+        padding: 15px;
+    }
+
+    .quiz-item:hover {
+        background-color: rgb(127, 136, 145);
+        margin: 10px;
+        width: 82%;
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+        border-radius: 5px;
+        white-space: pre-wrap;
+        padding: 15px;
+    }
+
+    .quiz-item:active{
+        background-color: slategrey;
+        margin: 10px;
+        width: 82%;
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+        border-radius: 5px;
+        white-space: pre-wrap;
+        padding: 15px;
+    }
+    .welcome-title {
+        font-size: 20px
+    }
+}
+

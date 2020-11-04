@@ -13,7 +13,7 @@ function Home() {
         {<div className="home">
           {!start ? <div className="home-container container" >
                 <div className='welcome'>
-                    <div style={{ fontSize: '30px'}}>Welcome to All That Apply!</div>
+                    <div className='welcome-title'>Welcome to All That Apply!</div>
                     <div className='intro-description'>Choose a quiz to get started, and press home at any point to return here!</div>
                   <div className='quiz-list'>
                     <div className='quiz-item' onClick={() => { setQuizState(0); setStartState(true);}} >Tandem's Trivia</div>
