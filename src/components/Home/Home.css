@@ -103,9 +103,6 @@
     padding: 35px
 }
 
-/*     box-shadow: inset -1px 1px 7px 2px #3d5769;
- */
-
 @media screen and (max-width: 960px) {
     .quiz-container {
         width: 90%;
