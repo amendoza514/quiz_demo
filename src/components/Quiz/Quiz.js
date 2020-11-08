@@ -43,7 +43,7 @@ function Quiz({ home, quizidx }) {
     }
 
     const handleCount = (jsonResponse) => {
-        setCount(jsonResponse.length)
+        setCount(jsonResponse.length + 1)
     }
 
     async function handleScore () {
