@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Question from './Question/Question'
 import './Quiz.css';
 import { API_KEY } from '../../secrets';
+import { motion } from 'framer-motion';
 
 function Quiz({ home, quizidx }) {
     const [questions, setQuestions] = useState(0);
@@ -38,7 +39,14 @@ function Quiz({ home, quizidx }) {
     const handleQuestionResponse = (response) => {
         setQuestions(response);
         let answers = getAnswers(response[0]);
-        let curQuest = <Question home={home} score={() => handleScore()} next={(index) => nextQuestion(index, response)} data={response[0]} index={0} answers={answers} />
+        let curQuest = 
+            <Question 
+                home={home} 
+                score={() => handleScore()} 
+                next={(index) => nextQuestion(index, response)} 
+                data={response[0]} 
+                index={0} answers={answers} 
+                />
         setCurrentQuestion(curQuest);
     }
 
@@ -79,7 +87,15 @@ function Quiz({ home, quizidx }) {
              setCurrentQuestion(newComponent);
         } else {
             let answers = getAnswers(newQuestion);
-            let newComponent = <Question home={home} score={() => handleScore()} next={(i) => nextQuestion(i, qs)} data={newQuestion} index={newIndex} answers={answers} />
+            let newComponent = 
+                <Question 
+                    home={home} 
+                    score={() => handleScore()} 
+                    next={(i) => nextQuestion(i, qs)} 
+                    data={newQuestion} 
+                    index={newIndex} 
+                    answers={answers} 
+                />
             setCurrentQuestion(newComponent);
         }
     }
@@ -120,7 +136,14 @@ function Quiz({ home, quizidx }) {
     }
 
     if (!finished) {
-        scoreBox = <div className='score' >score: {score}</div>
+        scoreBox = <motion.div 
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: .5 }}
+                        className='score' 
+                        >
+                            score: {score}
+                    </motion.div>
     } else {
         scoreBox = 
         <>
