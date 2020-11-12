@@ -64,7 +64,8 @@ function Question({ home, next, data, score, index, answers }) {
             </div>
         </motion.div>
 
-    const menuOption = <div className="quiz-container container" >
+    const menuOption = 
+            <div className="quiz-container container" >
                 <div className='question-prompt'>
                     Go Home? This will exit the quiz and reset any score
                 </div>
@@ -76,7 +77,7 @@ function Question({ home, next, data, score, index, answers }) {
 
     return (
       <>
-            {!menu ? quiz : menuOption}
+            { !menu ? quiz : menuOption }
       </>
     );
 }

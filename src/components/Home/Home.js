@@ -22,8 +22,7 @@ function Home() {
                 animate={{ y: 0, opacity: 1 }} 
                 transition={{ type: 'tween', delay: .7}}
                 className='welcome-title'
-                >
-                  Welcome!
+                > Welcome!
             </motion.div>
             <div className='intro-description'>Choose a quiz to get started and press home at any point to return here</div>
           <motion.div 

@@ -111,7 +111,7 @@ function Quiz({ home, quizidx }) {
                         .random(), value: a }))
                         .sort((a, b) => a.sort - b.sort)
                         .map(a => a.value);
-        return shuffled
+        return shuffled;
     }
 
     let loading = 
@@ -141,7 +141,7 @@ function Quiz({ home, quizidx }) {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 className='score' 
-                    > score: {score}
+                > score: {score}
             </motion.div>
         );
     } else {
@@ -150,14 +150,25 @@ function Quiz({ home, quizidx }) {
                 <div className='score-final-container'>
                     <div className='score-final' >Your final score is...</div>
                 </div>
-                 <div className="end-container container" >
+                 <motion.div 
+                    initial={{ y: '-500vh' }}
+                    animate={{ y: 0 }}
+                    transition={{ type: 'tween', duration: .5,  delay: .5 }}
+                    className="end-container container" 
+                    >
                     <div className='score-result'>
                         {score} out of {count}
                     </div>
                     <div className='percent'>
                         {Math.round((score / count) * 100)}%
                     </div>
-                    <div className='score-blurb'>{scoreBlurb}</div>
+                    <motion.div 
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 2, duration: .5 }}
+                        className='score-blurb'
+                        > {scoreBlurb}
+                    </motion.div>
                     <div className='end-buttons'>
                     <div className='end-button' onClick={() => { resetScore(); fetchQuestions();}} >
                         Retry
@@ -166,15 +177,15 @@ function Quiz({ home, quizidx }) {
                         Home
                     </div>
                     </div>
-                </div> 
+                </motion.div> 
             </>
         );
     }
 
     return (
         <>
-                { currentQuestion && scoreBox }
-                { currentQuestion ? currentQuestion : loading }
+            { currentQuestion && scoreBox }
+            { currentQuestion ? currentQuestion : loading }
         </>
     );
 }
