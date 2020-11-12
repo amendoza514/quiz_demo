@@ -136,37 +136,39 @@ function Quiz({ home, quizidx }) {
     }
 
     if (!finished) {
-        scoreBox = <motion.div 
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        className='score' 
-                        >
-                            score: {score}
-                    </motion.div>
+        scoreBox = (
+            <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className='score' 
+                    > score: {score}
+            </motion.div>
+        );
     } else {
-        scoreBox = 
-        <>
-        <div className='score-final-container'>
-            <div className='score-final' >Your final score is...</div>
-        </div>
-        <div className="end-container container" >
-                <div className='score-result'>
-                    {score} out of {count}
+        scoreBox = (
+            <>
+                <div className='score-final-container'>
+                    <div className='score-final' >Your final score is...</div>
                 </div>
-                <div className='percent'>
-                    {Math.round((score / count) * 100)}%
-                </div>
-                <div className='score-blurb'>{scoreBlurb}</div>
-                <div className='end-buttons'>
-                <div className='end-button' onClick={() => { resetScore(); fetchQuestions();}} >
-                    Retry
-                </div>
-                <div className='end-button' onClick={home} >
-                    Home
-                </div>
-                </div>
-            </div>
+                 <div className="end-container container" >
+                    <div className='score-result'>
+                        {score} out of {count}
+                    </div>
+                    <div className='percent'>
+                        {Math.round((score / count) * 100)}%
+                    </div>
+                    <div className='score-blurb'>{scoreBlurb}</div>
+                    <div className='end-buttons'>
+                    <div className='end-button' onClick={() => { resetScore(); fetchQuestions();}} >
+                        Retry
+                    </div>
+                    <div className='end-button' onClick={home} >
+                        Home
+                    </div>
+                    </div>
+                </div> 
             </>
+        );
     }
 
     return (
