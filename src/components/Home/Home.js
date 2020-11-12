@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '../Button/Button';
 import Quiz from '../Quiz/Quiz';
+import Logo from '../Logo/Logo'
 import './Home.css';
 import { AnimatePresence, motion } from 'framer-motion';
 
 function Home() {
     const [start, setStartState] = useState(false);
     const [quizType, setQuizState] = useState(null);
+    const [home, setHomeState] = useState(false);
 
     const homePage = (
       <motion.div 
@@ -22,7 +24,8 @@ function Home() {
                 animate={{ y: 0, opacity: 1 }} 
                 transition={{ type: 'tween', delay: .7}}
                 className='welcome-title'
-                > Welcome!
+                >
+                  Welcome!
             </motion.div>
             <div className='intro-description'>Choose a quiz to get started and press home at any point to return here</div>
           <motion.div 
@@ -37,18 +40,35 @@ function Home() {
       </motion.div>
     );
 
-    return (
-      <>
-        {<div className="home">
-          <AnimatePresence >
+    const LogoPage = (
+      <AnimatePresence>
+            {/* { !home && (
+                <motion.div 
+                  exit={{ x: '-100vw' }}
+                  >{homePage}
+                </motion.div>
+            )} */}
+            <Logo start={() => setHomeState(true)}/> 
+          </AnimatePresence>  
+    )
+
+    const main = (
+        <div className="home">
+          <AnimatePresence>
             { !start && (
-                <motion.div exit={{ x: '-100vw' }}
+                <motion.div 
+                  exit={{ x: '-100vw' }}
                   >{homePage}
                 </motion.div>
             )}
           </AnimatePresence>  
-          { start && <Quiz home={() => setStartState(false)} quizidx={quizType}/> }
-        </div>}
+          {start ? <Quiz home={() => setStartState(false)} quizidx={quizType}/>  : ''}
+        </div>
+    )
+
+    return (
+      <>
+        { home ? main : LogoPage }
       </>
     );
 }

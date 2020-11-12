@@ -5,3 +5,15 @@
     justify-content: center;
     align-items: center;
 }
+
+.logos-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-intro {
+    font-family: 'Pacifico', cursive;
+    color: white;
+    font-size: 4rem;
+    margin-right: 10px;
+}
