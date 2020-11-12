@@ -51,7 +51,7 @@
 
 }
 
-.next-button:hover {
+/* .next-button:hover {
     background-color: #2b3c4c;
     width: 75px;
     margin-top: 10px;
@@ -64,8 +64,7 @@
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease-out;
-
-}
+} */
 
 .next-button:active {
     background-color: #5f8cb9;
@@ -97,7 +96,7 @@
 
 }
 
-.home-button:hover {
+/* .home-button:hover {
     background-color: #2b3c4c;
     width: 75px;
     margin-top: 10px;
@@ -110,7 +109,7 @@
     border-radius: 5px;
     cursor: pointer;
     margin-right: 20px;
-}
+} */
 
 .home-button:active {
     background-color: #5f8cb9;

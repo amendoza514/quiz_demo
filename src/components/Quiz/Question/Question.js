@@ -37,12 +37,30 @@ function Question({ home, next, data, score, index, answers }) {
                 })}
             </div>
             <div className='button-list'>
-                <div className="home-button" onClick={() => setMenuState(true)}>
+                <motion.div 
+                    whileHover={{ 
+                        scale: 1.1,
+                        textShadow: "0px 0px 8px rgb(255, 255, 255)",
+                        // boxShadow: "0px 0px 8px rgb(255, 255, 255)",
+                    }}
+                    // transition={{ yoyo: Infinity }}
+                    className="home-button" 
+                    onClick={() => setMenuState(true)}
+                >
                     <i className="fas fa-home"></i>
-                </div>
-                <div className="next-button" onClick={goToNext}>
+                </motion.div>
+                <motion.div 
+                        whileHover={{ 
+                        scale: 1.1,
+                        textShadow: "0px 0px 8px rgb(255, 255, 255)",
+                        // boxShadow: "0px 0px 8px rgb(255, 255, 255)",
+                    }}
+                    // transition={{ yoyo: Infinity }}
+                    className="next-button" 
+                        onClick={goToNext}
+                    >
                     <i className="fas fa-long-arrow-alt-right"></i>
-                </div>
+                </motion.div>
             </div>
         </motion.div>
 

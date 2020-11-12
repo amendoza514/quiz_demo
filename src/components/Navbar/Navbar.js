@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from '../Button/Button'
+import { motion } from 'framer-motion'
 import './Navbar.css'
 
 function Navbar() {
@@ -11,9 +12,9 @@ function Navbar() {
           <div className="navbar">
             <div className="navbar-container container">
               <Link to="/" className="navbar-logo" onClick={() => setClick(false)} >
-                All That Apply &nbsp;<i className="fas fa-check"></i>
-
-
+                <motion.div whileHover={{ }}>
+                  All That Apply &nbsp;<i className="fas fa-check"></i>
+                  </motion.div>
               </Link>
               <div className="menu-icon" onClick={() => setClick(!click)}>
               </div>
