@@ -171,7 +171,7 @@ function Quiz({ home, quizidx }) {
 
     return (
         <>
-                { currentQuestion ? scoreBox : '' }
+                { currentQuestion && scoreBox }
                 { currentQuestion ? currentQuestion : loading }
         </>
     );

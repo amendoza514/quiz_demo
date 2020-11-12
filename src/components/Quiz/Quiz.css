@@ -1,11 +1,13 @@
 .loader {
     display: flex;
+    position: absolute;
     align-self: center;
-    margin-bottom: 26%;
+    /* margin-bottom: 26%; */
+    top: 0;
+    margin-top: 100px;
     color: white;
-    font-size: 30px;
+    font-size: 40px;
     font-family: 'Pacifico', cursive;
-    font-weight: 100;
 }
 
 @keyframes blink {50% { color: transparent }}

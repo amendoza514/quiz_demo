@@ -38,7 +38,7 @@
   align-items: center;
 }
 
-i.fas.fa-check {
+.check {
     font-weight: 600;
     font-size: 35px;
     margin-left: -10px;
