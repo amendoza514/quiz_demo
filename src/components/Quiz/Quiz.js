@@ -151,9 +151,9 @@ function Quiz({ home, quizidx }) {
                     <div className='score-final' >Your final score is...</div>
                 </div>
                  <motion.div 
-                    initial={{ y: '-500vh' }}
-                    animate={{ y: 0 }}
-                    transition={{ type: 'tween', duration: .5,  delay: .5 }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1 }}
                     className="end-container container" 
                     >
                     <div className='score-result'>
@@ -163,8 +163,8 @@ function Quiz({ home, quizidx }) {
                         {Math.round((score / count) * 100)}%
                     </div>
                     <motion.div 
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
+                        initial={{ y: '-500vh' }}
+                        animate={{ y: 0 }}
                         transition={{ delay: 2, duration: .5 }}
                         className='score-blurb'
                         > {scoreBlurb}
