@@ -42,7 +42,7 @@ function Home() {
         {<div className="home">
           <AnimatePresence >
             { !start && (
-                <motion.div exit={{ x: -1000 }}
+                <motion.div exit={{ x: '-100vw' }}
                   >{homePage}
                 </motion.div>
             )}
