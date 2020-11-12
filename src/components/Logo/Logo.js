@@ -25,18 +25,18 @@ export default function Logo({ start }) {
   }
   return (
     <>
-        {/* <AnimatePresence> */}
+        <AnimatePresence>
             <motion.div className='temp' >
                 {/* <Link to="/home" > */}
                 <div className='logos-container'>
                   <div className='logo-intro'>All That Apply</div>
                   <motion.div
                       style={{
-                          width: 150,
-                          height: 150,
-                          borderRadius: 30,
-                          backgroundColor: "rgba(255,255,255,0.5)",
-                          cursor: "pointer"
+                        width: 150,
+                        height: 150,
+                        borderRadius: 30,
+                        backgroundColor: "rgba(255,255,255,0.5)",
+                        cursor: "pointer"
                       }}
                       variants={boxVariants}
                       initial={"unchecked"}
@@ -59,8 +59,15 @@ export default function Logo({ start }) {
                   </motion.div>
                 </div>
                 {/* </Link> */}
+                  <motion.div 
+                    className='intro-help'
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 3 }}
+                      >check box to enter
+                  </motion.div>
             </motion.div>
-        {/* </AnimatePresence> */}
+        </AnimatePresence>
     </>
   );
 }

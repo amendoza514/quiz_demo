@@ -41,16 +41,8 @@ function Home() {
     );
 
     const LogoPage = (
-      <AnimatePresence>
-            {/* { !home && (
-                <motion.div 
-                  exit={{ x: '-100vw' }}
-                  >{homePage}
-                </motion.div>
-            )} */}
-            <Logo start={() => setHomeState(true)}/> 
-          </AnimatePresence>  
-    )
+      <Logo start={() => setHomeState(true)}/> 
+    );
 
     const main = (
         <div className="home">

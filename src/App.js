@@ -8,13 +8,13 @@ import Home from './components/Home/Home';
 
 
 function App() {
+  
   return (
     <Router>
       <Navbar />
       <Switch>
           <Route path='/' exact component={Home} />
-          {/* <Route path='/' exact component={Logo} /> */}
-           {/* <Route path='/aboutme' component={Services} /> */}
+           { /* <Route path='/home' exact component={Logo} /> */ }
       </Switch>
       <Footer />
     </Router>
