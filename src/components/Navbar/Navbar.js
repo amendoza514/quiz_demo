@@ -8,7 +8,7 @@ function Navbar() {
     let [click, setClick] = useState(false)
 
     const navbar = (
-                <div className="navbar">
+          <div className="navbar">
             <div className="navbar-container container">
               <Link to="/" className="navbar-logo" onClick={() => setClick(false)} >
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>

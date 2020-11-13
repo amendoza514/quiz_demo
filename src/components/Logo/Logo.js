@@ -44,6 +44,7 @@ export default function Logo({ start }) {
                       transition={{ type: "spring", stiffness: 300, damping: 20 }}
                       onTap={() => setIsChecked(!isChecked)}
                       onClick={handleStart}
+                      whileHover={{  }}
                       >
                       <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150">
                           <motion.path
@@ -63,7 +64,7 @@ export default function Logo({ start }) {
                     className='intro-help'
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
-                      transition={{ delay: 3 }}
+                      transition={{ duration: .5, delay: 2, yoyo: Infinity }}
                       >check box to enter
                   </motion.div>
             </motion.div>
