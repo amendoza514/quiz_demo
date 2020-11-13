@@ -121,15 +121,15 @@ function Quiz({ home, quizidx }) {
     
     if ((score / count) === 1) {
         scoreBlurb = 'Perfect!'
-    } else if ((score / count) > .9000) {
+    } else if ((score / count) >= .9000) {
         scoreBlurb = 'Almost perfect!'
-    } else if ((score / count) > .8000) {
+    } else if ((score / count) >= .8000) {
         scoreBlurb = 'Solid score!'
-    } else if ((score / count) > .7000) {
+    } else if ((score / count) >= .7000) {
         scoreBlurb = 'Still a passing grade!'
-    } else if ((score / count) > .4000) {
+    } else if ((score / count) >= .4000) {
         scoreBlurb = 'Maybe try again?'
-    } else if ((score / count) > .1000) {
+    } else if ((score / count) >= .1000) {
         scoreBlurb = 'You got at least one right'
     } else {
         scoreBlurb = 'This did not go well...'

@@ -5,12 +5,22 @@ import { motion } from 'framer-motion';
 
 function Question({ home, next, data, score, index, answers }) {
     const [revealState, setRevealState] = useState(false);
-    const [menu, setMenuState] = useState(false)
+    const [menu, setMenuState] = useState(false);
+    const [answered, setAnsweredState] = useState(false);
+
+    useEffect(() => {
+        setAnsweredState(false)
+    }, [data.question]);
 
     const goToNext = () => {
         next(index);
         setRevealState(false)
         //refreshAnswers();
+    }
+
+    async function handleScore() {
+        if (!answered) score();
+        await setAnsweredState(true);
     }
 
     const quiz = 
@@ -29,7 +39,7 @@ function Question({ home, next, data, score, index, answers }) {
                             key={idx} 
                             content={answer} 
                             correct={data.correct}
-                            score={score}
+                            score={handleScore}
                             show = {revealState}
                             reveal={() => setRevealState(true)}
                         />
