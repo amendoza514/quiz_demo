@@ -237,3 +237,10 @@
     }
 }
 
+@media screen and (max-height: 720px) {
+    .end-container {
+            width: 55%;
+            height: 40vh;
+    }
+}
+
