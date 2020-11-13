@@ -6,13 +6,12 @@ import './Navbar.css'
 
 function Navbar() {
     let [click, setClick] = useState(false)
-        
-    return (
-      <>
-          <div className="navbar">
+
+    const navbar = (
+                <div className="navbar">
             <div className="navbar-container container">
               <Link to="/" className="navbar-logo" onClick={() => setClick(false)} >
-                <motion.div whileHover={{ }}>
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
                   All That Apply&nbsp;
                   <i className="fas fa-check"></i>
                   {/* <svg 
@@ -56,6 +55,11 @@ function Navbar() {
               </ul>
             </div>
           </div>
+    )
+
+    return (
+      <>
+          { navbar }
       </>
     );
 }

@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '../Button/Button';
 import Quiz from '../Quiz/Quiz';
 import Logo from '../Logo/Logo'
+import Navbar from '../Navbar/Navbar'
 import './Home.css';
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -45,6 +46,8 @@ function Home() {
     );
 
     const main = (
+      <>
+      <Navbar /> 
         <div className="home">
           <AnimatePresence>
             { !start && (
@@ -56,6 +59,7 @@ function Home() {
           </AnimatePresence>  
           {start ? <Quiz home={() => setStartState(false)} quizidx={quizType}/>  : ''}
         </div>
+        </>
     )
 
     return (
