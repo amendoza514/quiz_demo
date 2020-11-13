@@ -145,7 +145,7 @@
     .score {
     background-color:  #131f2f;
     font-family: 'Roboto';
-    font-size: 25px;
+    font-size: 20px;
     padding: 30px;
     height: 4rem;
     display: flex;
@@ -161,13 +161,13 @@
 }
 
     .score-final {
-        font-size: 20px;
+        font-size: 15px;
         width: 200px;
         height: 4rem;
     }
 
     .score-result {
-        font-size: 30px;
+        font-size: 25px;
         margin: 0px
     }
 
@@ -235,6 +235,11 @@
         font-family: 'Pacifico', cursive;
         font-weight: bolder;
     }
+
+    .score-blurb {
+    margin-top: 10px;
+    font-size: 12px;
+}
 }
 
 @media screen and (max-height: 720px) {
