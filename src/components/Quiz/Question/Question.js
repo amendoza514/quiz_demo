@@ -9,19 +9,19 @@ function Question({ home, next, data, score, index, answers }) {
     const [answered, setAnsweredState] = useState(false);
 
     useEffect(() => {
-        setAnsweredState(false)
+        setAnsweredState(false);
     }, [data.question]);
 
     const goToNext = () => {
         next(index);
         setRevealState(false)
         //refreshAnswers();
-    }
+    };
 
     async function handleScore() {
         if (!answered) score();
         await setAnsweredState(true);
-    }
+    };
 
     const quiz = 
         <motion.div 
@@ -41,7 +41,7 @@ function Question({ home, next, data, score, index, answers }) {
                             correct={data.correct}
                             score={handleScore}
                             show = {revealState}
-                            reveal={() => setRevealState(true)}
+                            reveal={() =>{setRevealState(true); setAnsweredState(true)}}
                         />
                     )
                 })}
