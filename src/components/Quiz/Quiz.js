@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Question from './Question/Question'
 import './Quiz.css';
-import { API_KEY } from '../../secrets';
+// import { API_KEY } from '../../secrets';
 import { motion } from 'framer-motion';
 
 function Quiz({ home, quizidx }) {
@@ -12,6 +12,7 @@ function Quiz({ home, quizidx }) {
     const [sequence, setSequence] = useState(0);
     const [currentQuestion, setCurrentQuestion] = useState(null);
 
+    const API_KEY = "$2b$10$SSwOGKNSXdW.5HVS0wYxQOZxLlKQW0e1MjrNSpqyHCg12QdmCSrWq"
     let quiz = [
         'https://api.jsonbin.io/b/5f9b01129291173cbca5711d',
         'https://api.jsonbin.io/b/5fa1e43d47077d298f5ca0e2/1'
