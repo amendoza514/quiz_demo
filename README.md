@@ -8,8 +8,6 @@ Just click the link here to try it out (https://allthatapply.netlify.app)!
 
 ## Future Implementations
 
-More quiz options: All That Apply uses a free JSON hosting site to request quiz information via an API call, so adding new quiz content should be straightforward.
-
 Make your own quiz: I can utilize a WRITE component to allow users to write basiz questions and answers choices, which would then be submitted as a JSON file that can be read in normal fashion.
 
 ## Dependencies
