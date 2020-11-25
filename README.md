@@ -8,7 +8,7 @@ Just click the link here to try it out (https://allthatapply.netlify.app)!
 
 ## Future Implementations
 
-Make your own quiz: I can utilize a WRITE component to allow users to write basiz questions and answers choices, which would then be submitted as a JSON file that can be read in normal fashion.
+Make your own quiz: I can utilize a WRITE component to allow users to write basic questions and answers choices, which would then be submitted as a JSON file.
 
 ## Dependencies
 
