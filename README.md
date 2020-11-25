@@ -1,6 +1,6 @@
 # All That Apply!
 
-All That Apply! is a simple quiz application using React. Originally inspired by a fullstack application submission, I later expanded on the challenge prompt by incorporating an API to fetch several potential quiz options, and used Framer-Motion to breathe life into the app with fluid animations and a responsive UI experience.
+All That Apply! is a simple quiz application using React. Originally inspired by a full-stack application submission, I later expanded on the challenge prompt by incorporating an API to fetch several potential quiz options, and used Framer-Motion to breathe life into the app with fluid animations and a responsive UI experience.
 
 ## Access
 
