@@ -4,7 +4,7 @@ All That Apply! is a simple quiz application using React. Originally inspired by
 
 ## Access
 
-Click the link to try it out (https://allthatapply.netlify.app)!
+Click the link to try it out (https://allthatapply.netlify.app)
 
 ## Future Implementations
 
